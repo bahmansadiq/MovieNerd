@@ -1,0 +1,30 @@
+<div>
+<!-- make a dive to get user input and a button linked to getMovie funtion in movieController -->
+	<div class="input-group">
+		<input type="text" class="form-control" ng-model="vm.searchMovie" placeholder="Search for your favourite movie">
+		<span class="input-group-btn">
+			<button class="btn btn-primary" ng-click="vm.getMovie()">Search</button>
+		</span>   
+	</div>
+
+</div>
+<legend></legend>
+<div >
+<!-- divide the page to 3 equal units and repeatedly push data into it -->
+	<div class="col-sm-4 text-center " ng-repeat="movie in vm.movieList">			
+		<div class="panel panel-default ">
+			<div class="panel-heading" >
+				{{movie.Title}}	
+			</div>
+			<div class="panel-body">
+				<img src="{{movie.Poster}}" id="panelImg">
+				<p>Filmed in {{movie.Year}}</p>	
+				<!-- a link to take you to the next state taking the movie idmbID -->
+				<a class="" ui-sref="movieDetails({movieDetailId: movie.imdbID})">Click here to view on IMDB</a>
+			</div>
+		</div>
+
+	</div>
+</div>
+	<!-- desplay the other state view here -->		
+<div ui-view></div>
