@@ -34,3 +34,4 @@ console.log($stateParams.movieDetailId);
    }
 })();
 
+//-CW, EP, BS, VZ
